@@ -25,4 +25,15 @@ export class APIService {
       })
   )
    }
+
+
+
+   getEventbyOrganizerId(OrganizerId: number){
+
+    return this.http.get<IEvent>(`${this.apiUrl}/GetEventsByOrganizer?organizerId=${OrganizerId}`).pipe(
+      map((res: any) => {
+        return res.data;
+      })
+  )
+   }
 }

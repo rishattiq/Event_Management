@@ -17,16 +17,22 @@ export class EventComponent {
   ActivatedRoute = inject(ActivatedRoute);
   service = inject(APIService);
   eventData$: Observable<IEvent> = new Observable<IEvent>;
+  events$: Observable<IEvent[]> = new Observable<IEvent[]>;
 
   constructor(){
     this.ActivatedRoute.params.subscribe((res:any)=>{
       this.eventData$ = this.service.getEventbyId(res.id);
+      this.eventData$.subscribe((res:IEvent)=>{
+
+        this.events$ = this.service.getEventbyOrganizerId(res.organizerId)
+      })
+     
 
 
     })
   }
 
-  getEventDwtails(id:number){
+  getEventDetails(organizerName:string){
    
     
   }

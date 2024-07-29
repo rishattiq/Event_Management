@@ -17,5 +17,6 @@ export interface IEvent
         price: number
         location: string
         imageUrl: string
+        organizerId: number
       }
       
