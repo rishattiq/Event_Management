@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 
 
@@ -11,4 +11,27 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'event_booking_app';
+
+  islogin:boolean=false
+
+  @ViewChild ('model') model:ElementRef | undefined
+
+  
+
+
+  showLogin(){
+
+    if(this.model){
+      this.model.nativeElement.style.display = 'block'
+    }
+    
+  }
+
+  closeLogin(){
+
+    if(this.model){
+      this.model.nativeElement.style.display = 'none'
+    }
+    
+  }
 }
