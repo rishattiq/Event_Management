@@ -36,4 +36,10 @@ export class APIService {
       })
   )
    }
+
+   getRegister(obj:any){
+    return this.http.post<iAPI>(`${this.apiUrl}/CreateUser`,obj)
+   }
+
+   
 }

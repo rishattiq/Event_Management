@@ -20,3 +20,15 @@ export interface IEvent
         organizerId: number
       }
       
+
+export class User 
+{
+        UserId: number = 0
+        Name: string = ""
+        Email: string = ""
+        Password: string = ""
+        ContactNo: string = ""
+        Role: string = ""
+      
+    }
+      
