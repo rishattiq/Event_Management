@@ -66,24 +66,29 @@
             <section>
   
             </section>
-            <!-- Email input -->
-            <div class="form-outline mb-4">
-              <input type="email" id="form3Example3" class="form-control form-control-lg"
-                placeholder="Enter a valid email address" />
-              <label class="form-label" for="form3Example3">User Name </label>
-            </div>
-  
-            <!-- Password input -->
+
+             <!-- Password input -->
+
             <div class="form-outline mb-3">
-              <input type="password" id="form3Example4" class="form-control form-control-lg"
+              <input [(ngModel)]="loginObj.Password" name="password" type="password" id="form3Example4" class="form-control form-control-lg"
                 placeholder="Enter password" />
               <label class="form-label" for="form3Example4">Password</label>
             </div>
+
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+              <input [(ngModel)]="loginObj.ContactNo" name="contactno" type="email" id="form3Example3" class="form-control form-control-lg"
+                placeholder="Enter a valid Contactno" />
+              <label class="form-label" for="form3Example3">Contact no </label>
+            </div>
+  
+           
+           
   
             <div class="text-center text-lg-start mt-4 pt-2">
               <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg"
-                style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
-              <p class="small fw-bold mt-2 pt-1 mb-0" (click)="islogin=false">Don't have an account? <a href="#!" class="link-danger"
+                style="padding-left: 2.5rem; padding-right: 2.5rem;" (click)="onlogin()">Login</button>
+              <p class="small fw-bold mt-2 pt-1 mb-0" (click)="islogin=false">Don't have an account? <a class="link-danger"
                   >Register</a></p>
             </div>
   
@@ -114,13 +119,13 @@
             </div>
 
             <div class="form-outline">
-              <input [(ngModel)]="userObj.ContactNo" type="text" id="form3Example4" class="form-control form-control-lg"
+              <input [(ngModel)]="userObj.ContactNo" name="contactno" type="text" id="form3Example4" class="form-control form-control-lg"
                 placeholder="Enter Contact no" />
               <label class="form-label" for="form3Example4">Contact no</label>
             </div>
            
             <div class="form-outline">
-              <input [(ngModel)]="userObj.Password" type="password" id="form3Example4" class="form-control form-control-lg"
+              <input [(ngModel)]="userObj.Password" name="password" type="password" id="form3Example4" class="form-control form-control-lg"
                 placeholder="Enter password" />
               <label class="form-label" for="form3Example4">Password</label>
             </div>
@@ -129,7 +134,7 @@
             <div class="text-center text-lg-start mt-2 pt-2">
               <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg"
                 style="padding-left: 2.5rem; padding-right: 2.5rem;" (click)="onRegister()">Register</button>
-              <p class="small fw-bold mt-2 pt-1 mb-0">If You Alreay Have an Account? <a href="#!"
+              <p class="small fw-bold mt-2 pt-1 mb-0">If You Alreay Have an Account? <a 
                   class="link-danger" (click)="islogin=true">Login</a></p>
             </div>
   

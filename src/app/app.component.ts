@@ -19,6 +19,13 @@ export class AppComponent {
 
   userObj: User=new User()
 
+  loginObj={
+    
+      "Password": "",
+      "ContactNo": ""
+    }
+  
+
   @ViewChild ('model') model:ElementRef | undefined
 
  http = inject(HttpClient)
@@ -46,6 +53,21 @@ export class AppComponent {
 
       if(res.result){
         alert("successfully registered")
+        this.closeLogin();
+      }
+      else{
+        alert(res.message)
+      }
+
+    })
+  }
+  
+  onlogin(){
+    this.service.login(this.loginObj).subscribe((res:iAPI)=>{
+      if(res.result){
+        alert("successfully login")
+        localStorage.setItem('eventUser' , JSON.stringify(res.data))
+        this.closeLogin()
       }
       else{
         alert(res.message)

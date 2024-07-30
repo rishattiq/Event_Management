@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { iAPI, IEvent } from '../model/event';
+import { iAPI, IEvent, User } from '../model/event';
 import { map } from 'rxjs';
 
 @Injectable({
@@ -37,9 +37,11 @@ export class APIService {
   )
    }
 
-   getRegister(obj:any){
+   getRegister(obj:User){
     return this.http.post<iAPI>(`${this.apiUrl}/CreateUser`,obj)
    }
 
-   
+   login(obj:any){
+    return this.http.post<iAPI>(`${this.apiUrl}/Login`,obj)
+   }
 }
